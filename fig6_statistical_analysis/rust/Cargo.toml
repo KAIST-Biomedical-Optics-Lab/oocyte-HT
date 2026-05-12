@@ -1,0 +1,18 @@
+[package]
+name = "fast_glcm"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+name = "fast_glcm"
+crate-type = ["cdylib"]
+
+[dependencies]
+pyo3 = { version = "0.22.6", features = ["extension-module"] }
+numpy = "0.22.1"
+ndarray = "0.16.1"
+
+[profile.release]
+lto = true
+codegen-units = 1
+opt-level = 3
